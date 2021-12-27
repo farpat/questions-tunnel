@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{{ asset('favicon.svg') }}">
+
+    {% block assets %}
+        {{ render_asset('front.js', ['react']) }}
+    {% endblock %}
+</head>
+<body data-script-to-load="{% block script_to_load %}{% endblock %}">
+{% include '_partials/navbar.html.twig' %}
+{% include '_partials/alert.html.twig' %}
+{% block body %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+    php:
+        image: farpat/myphp:8.0
+        volumes:
+            - .:${DOCKER_PROJECT_PATH}
+            - ~/.cache/composer:/.cache/composer
+        working_dir: ${DOCKER_PROJECT_PATH}
+        user: app
+        depends_on:
+            - mariadb
+        networks:
+            - test
+    mariadb:
+        image: mariadb
+        volumes:
+            - db_data:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+        networks:
+            - test
+
+volumes:
+    db_data:
+        driver: local
+
+networks:
+    test:

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('app_front_home_index') }}">Homepage</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    {% if app.user %}
+                        <a href="{{ path('app_security_logout') }}" class="nav-link text-danger">Logout</a>
+                    {% else %}
+                        {% set active_class = get_active_class(app.request, 'app_security_login') %}
+                        <a href="{{ path('app_security_login') }}" {% if active_class != '' %}aria-current="page"{% endif %}
+                           class="nav-link {{ active_class }}">Login</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    {% set active_class = get_active_class(app.request, 'app_front_answer_index') %}
+                    <a href="{{ path('app_front_answer_index') }}" {% if active_class != '' %}aria-current="page"{% endif %}
+                       class="nav-link {{ active_class }}">Give an answer</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

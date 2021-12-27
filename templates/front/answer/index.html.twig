@@ -1,0 +1,15 @@
+{% extends '_layout/front.html.twig' %}
+
+{% block title %}Give an answer{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mb-5">Give an answer</h1>
+
+    <section id="questions-component" data-questions="{{ questions_in_json }}" data-submit-url="{{ path('app_front_answer_submit') }}">
+        Questions loading...
+    </section>
+</div>
+{% endblock %}
+
+{% block script_to_load %}answer_index.jsx{% endblock %}

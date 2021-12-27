@@ -1,0 +1,46 @@
+$background_items_active: $blue-900;
+$color_items_active: $gray-100;
+
+$background_items: $blue-100;
+
+.steps {
+  display: flex;
+  list-style: none;
+  padding: 0.5rem 0;
+  user-select: none;
+  font-weight: bold;
+}
+
+.step {
+  cursor: pointer;
+  background: $background_items;
+}
+
+.step.active .step-body {
+  color: $color_items_active;
+  background: $background_items_active;
+  border-radius: 2rem;
+}
+
+
+.step-body {
+  display: inline-block;
+  margin: 0.25rem 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+
+.step:after {
+  content: ' >>';
+  margin-right: 0.5rem;
+  font-weight: normal;
+}
+
+.step:last-child {
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.step:last-child:after {
+  content: '';
+}
