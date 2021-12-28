@@ -14,8 +14,8 @@ Ce projet est fait en Symfony / React. Il est le début d'un formulaire de quest
 # Utilisation
 Pour lancer le projet : `make dev`.
 
-| :warning:        Attention à la fin de ne pas oublier à lancer `make stop-dev` pour arrêter les conteneurs de développement.          |
-|---------------------------------------------------------------------------------------------------------------------------------------|
+| :warning:      | Attention à la fin de ne pas oublier à lancer `make stop-dev` pour arrêter les conteneurs de développement |
+|----------------|:-----------------------------------------------------------------------------------------------------------|
 
 # Tests automatiques
 Pour lancer les tests : `make test`
